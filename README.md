@@ -26,10 +26,14 @@ CREATE USER 'sys_temp'@'%' IDENTIFIED WITH mysql_native_password BY '1234567';
 Задание 1.3. Список пользователей (скриншот)
 ```
 SELECT User, Host FROM mysql.user;
+```
 Задание 1.4. Выдача всех прав
+```
 GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+```
 Задание 1.5. Список прав для sys_temp (скриншот)
+```
 SHOW GRANTS FOR 'sys_temp'@'%';
 ```
 
