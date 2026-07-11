@@ -17,48 +17,32 @@
 <img width="627" height="793" alt="image" src="https://github.com/user-attachments/assets/3c822d79-e4c5-4646-8d51-f12cd836bfbc" />
 
 ### все запросы
--- ===========================================
--- Задание 1.2. Создание пользователя sys_temp
--- ===========================================
-CREATE USER 'sys_temp'@'%' IDENTIFIED WITH mysql_native_password BY 'TempPass123!';
 
--- ===========================================
--- Задание 1.3. Список пользователей (скриншот)
--- ===========================================
+Задание 1.2. Создание пользователя sys_temp
+CREATE USER 'sys_temp'@'%' IDENTIFIED WITH mysql_native_password BY '1234567';
+
+
+Задание 1.3. Список пользователей (скриншот)
 SELECT User, Host FROM mysql.user;
-
--- ===========================================
--- Задание 1.4. Выдача всех прав
--- ===========================================
+Задание 1.4. Выдача всех прав
 GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-
--- ===========================================
--- Задание 1.5. Список прав для sys_temp (скриншот)
--- ===========================================
+Задание 1.5. Список прав для sys_temp (скриншот)
 SHOW GRANTS FOR 'sys_temp'@'%';
 
--- ===========================================
--- Задание 1.6. Смена типа аутентификации
--- ===========================================
-ALTER USER 'sys_temp'@'%' IDENTIFIED WITH mysql_native_password BY 'TempPass123!';
+
+Задание 1.6. Смена типа аутентификации
+
+ALTER USER 'sys_temp'@'%' IDENTIFIED WITH mysql_native_password BY '1234567';
 FLUSH PRIVILEGES;
 
--- ===========================================
--- Задание 1.8. Список таблиц Sakila (скриншот)
--- ===========================================
-USE sakila;
-SHOW TABLES;
-
--- ===========================================
--- Задание 2. Первичные ключи таблиц Sakila (скриншот)
--- ===========================================
+Задание 2. Первичные ключи таблиц Sakila (скриншот)
 USE sakila;
 SELECT 
     TABLE_NAME,
     COLUMN_NAME
 FROM
-    information_schema.key_column_usage
+    information_schema.KEY_COLUMN_USAGE
 WHERE
     CONSTRAINT_SCHEMA = 'sakila'
     AND CONSTRAINT_NAME = 'PRIMARY'
